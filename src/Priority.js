@@ -19,7 +19,7 @@ function Priority(props) {
       1:"Less priority",
       0:"No priority"
     }
-    function shiv(e,Tickets,Users){
+    function changeOrder(e,Tickets,Users){
       dispatch(fetchOrder(e,Tickets,Users));
       }
     var loading_tickets=useSelector((state=>state.loading_tickets))
@@ -77,12 +77,12 @@ function Priority(props) {
   </button>
   <ul className="dropdown-menu">
     <li>
-      <button className="dropdown-item" href="#" onClick={()=>shiv(-1,Tickets,Users)} >
+      <button className="dropdown-item" href="#" onClick={()=>changeOrder(-1,Tickets,Users)} >
         User
       </button>
     </li>
     <li>
-    <button className="dropdown-item" herf="#" onClick={()=>shiv(1,Tickets,Users)} >
+    <button className="dropdown-item" herf="#" onClick={()=>changeOrder(1,Tickets,Users)} >
          Priority
       </button>
     </li>

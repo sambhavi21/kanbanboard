@@ -10,7 +10,7 @@ function User(props) {
 const Tickets=useSelector((state=>state.Tickets))
 const Users=useSelector(state=>state.Users)
 //Tickets.sort((a, b)=>b.priority-a.priority)
-function shiv(e,Tickets,Users){
+function changeOrder(e,Tickets,Users){
   dispatch(fetchOrder(e,Tickets,Users));
   }
 const copy_tick=Tickets.users
@@ -83,12 +83,12 @@ else if(Tickets_error){
   </button>
   <ul className="dropdown-menu">
     <li>
-      <button className="dropdown-item" href="#" onClick={()=>shiv(-1,Tickets,Users)} >
+      <button className="dropdown-item" href="#" onClick={()=>changeOrder(-1,Tickets,Users)} >
         User
       </button>
     </li>
     <li>
-    <button className="dropdown-item" herf="#" onClick={()=>shiv(1,Tickets,Users)} >
+    <button className="dropdown-item" herf="#" onClick={()=>changeOrder(1,Tickets,Users)} >
          Priority
       </button>
     </li>
